@@ -1,0 +1,12 @@
+<app-search (resultEvent)="receiveResult($event)"></app-search>
+<div *ngIf="teams && teams.length > 0" class="team-list">
+  <div>
+    <ul>
+      <li *ngFor="let team of teams">
+        <a routerLink="/team/{{team._id}}">
+          <img src="{{team.thumbnail}}" alt="team.name"/>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Leagues</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Leagues"
+           matInput
+           [formControl]="myControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <div class="button-row">
+    <button mat-raised-button color="basic"  (click)="onSubmit()">Search</button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+.team-list img{
+  width: 5rem;
+  height: auto;
+}
+
+.team-list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-flow: row wrap;
+  width: 10rem;
+}
+
+.team-list li {
+  padding: 0.5rem;
+  display: inline-flex;
+  width: 5rem;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+<div class="player">
+  <h1>{{ team }}</h1>
+  <ul *ngIf="players && players.length >= 0">
+    <li *ngFor="let player of players; let i = index" class="player-card">
+      <img src="{{player.thumbnail}}" alt="player.name">
+      <ul class="player-detail">
+        <li><strong>{{ player.name }}</strong></li>
+        <li>position : {{ player.position }}</li>
+        <li>birthDate : {{ player.born | date: 'dd-MM-yyyy'  }}</li>
+        <li *ngIf="player.signin.amount !== 0">price : {{ player.signin.amount | currency:player.signin.currency }}</li>
+        <li *ngIf="player.signin.amount === 0">price : free</li>
+      </ul>
+    </li>
+  </ul>
+</div>
